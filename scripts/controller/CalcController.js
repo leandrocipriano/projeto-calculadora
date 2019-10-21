@@ -433,9 +433,10 @@ class CalcController{
         */
     }
 
+    /* método comentado. Removido para stats WayDev
     get displayTime(){
         return this._timeEl.innerHTML;
-    }
+    }*/
 
     get displayDate(){
         return this._dateEl.innerHTML;
