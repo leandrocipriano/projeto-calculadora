@@ -197,6 +197,10 @@ class CalcController{
         }
     }
 
+    getWhoAmI(){
+        return "Norivaldo";
+    }
+
     getResult(){
         
         //console.log('getResult', this._operation);
