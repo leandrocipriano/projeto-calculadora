@@ -119,6 +119,8 @@ class CalcController{
         
         this.displayDate = this.currentDate.toLocaleDateString(this._locale);
 
+        // comentário teste waydev
+
         //formatando cada campo
         /*this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
             day:"2-digit", 
