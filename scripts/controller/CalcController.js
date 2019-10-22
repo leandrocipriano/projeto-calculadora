@@ -5,7 +5,11 @@ class CalcController{
         
         //var displayCalc = "0";
         //var dataAtual;
-        
+
+        //variavel para validar audio ligado ou desligado
+        this._audioOnOff = false;
+        this._audio = new Audio("click.mp3");
+
         //variáveis em clases são this para se comportarem como objetos
         this._lastOperator = '';
         this._lastNumber = '';
@@ -29,6 +33,38 @@ class CalcController{
         //dir(document)
         //para exibir os elementos do documento como objetos
         
+    }
+
+
+    copyToClipboard(){
+        
+        let input = document.createElement('input');
+
+        input.value = this.displayCalc;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        //O comando Copy irá copiar tudo selecionado
+        document.execCommand("Copy");
+
+        //Ocultar o campo input
+        input.remove();
+
+    }
+
+    pastFromClipboard(){
+
+        document.addEventListener('paste', e=>{
+
+            let text = e.clipboardData.getData('Text');
+            
+            this.displayCalc = parseFloat(text);
+
+            //console.log(text);
+        });
+
     }
 
     initalize(){
@@ -63,12 +99,48 @@ class CalcController{
         //this._timeEl.innerHTML = "00:22";
 
         this.setLastNumberToDisplay();
+
+        this.pastFromClipboard();
+
+        document.querySelectorAll('.btn-ac').forEach(btn=>{
+
+            //Adicionar um listner para identificar double click (dblclick)
+            btn.addEventListener('dblclick', e=>{
+
+                this.toggleAudio();
+
+            });
+
+        });
+    }
+
+    toggleAudio(){
+        
+        //If condicional normal
+        /*if(this._audioOnOff){
+            this._audioOnOff = false;
+        }else 
+            this._audioOnOff = true;*/
+        //If ternario
+        //this._audioOnOff = (this._audioOnOff) ? false : true;
+        //If ternario resumido
+        this._audioOnOff = !this._audioOnOff;
+    }
+
+    playAudio(){
+
+        if(this._audioOnOff){
+
+            this._audio.currentTime = 0;
+            this._audio.play();
+        }
     }
 
     iniKeyboard(){
 
         document.addEventListener('keyup', e=>{
 
+            this.playAudio();
             //console.log(e.key);
 
             switch(e.key){
@@ -108,6 +180,13 @@ class CalcController{
                 case '8':
                 case '9':
                     this.addOperation(parseInt(e.key));
+                    break;
+                
+                case 'c':
+                    //Identificar que o C foi pressionado com o Ctrl
+                    if (e.ctrlKey){
+                        this.copyToClipboard();
+                    }
                     break;
             }
 
@@ -231,22 +310,26 @@ class CalcController{
         //eval([10,"+",90].join("")) = "100";
         let result = this.getResult();
 
-        if(last == '%'){
-
-            result /= 100;
-            this._operation = [result];
-
-        }else{
-
-            this._operation = [result];
-
-            if(last) this._operation.push(last);
-        }
+        result = this.calcMod(last, result);
             
 
         //Atualizar Display
         this.setLastNumberToDisplay();
     }
+
+    calcMod(last, result) {
+        if (last == '%') {
+            result /= 100;
+            this._operation = [result];
+        }
+        else {
+            this._operation = [result];
+            if (last)
+                this._operation.push(last);
+        }
+        return result;
+    }
+   
 
     getLastItem(isOperator = true){
 
@@ -337,7 +420,10 @@ class CalcController{
     }
 
     execBtn(value){
-    
+        
+        //ao clicar em qualquer tecla, será executado o audio
+        this.playAudio();
+
         switch(value){
 
             case 'ac':
