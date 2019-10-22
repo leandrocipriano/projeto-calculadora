@@ -199,13 +199,6 @@ class CalcController{
         }
     }
 
-    getWhoAmI(){
-        // melhoria adicionada 
-
-        let a="Norivaldo";
-        return a;
-    }
-
     getResult(){
         
         //console.log('getResult', this._operation);
@@ -436,10 +429,9 @@ class CalcController{
         */
     }
 
-    /* método comentado. Removido para stats WayDev
     get displayTime(){
         return this._timeEl.innerHTML;
-    }*/
+    }
 
     get displayDate(){
         return this._dateEl.innerHTML;
