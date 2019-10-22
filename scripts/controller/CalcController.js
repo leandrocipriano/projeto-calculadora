@@ -200,7 +200,10 @@ class CalcController{
     }
 
     getWhoAmI(){
-        return "Norivaldo";
+        // melhoria adicionada 
+
+        let a="Norivaldo";
+        return a;
     }
 
     getResult(){
