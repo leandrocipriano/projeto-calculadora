@@ -165,6 +165,7 @@ class CalcController{
 
     setError(){
 
+        // seta msg erro
         this.displayCalc = "ERROR";
     }
 
