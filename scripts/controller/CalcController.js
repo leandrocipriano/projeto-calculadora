@@ -278,8 +278,18 @@ class CalcController{
 
     getResult(){
         
-        //console.log('getResult', this._operation);
-        return eval(this._operation.join(""));
+        try{
+
+            //console.log('getResult', this._operation);
+            return eval(this._operation.join(""));
+
+        }catch(e){
+            //Executa o método após 1 segundo
+            setTimeout(()=>{
+                this.setError();
+            }, 1);
+            
+        }        
     }
 
     calc(){
@@ -526,6 +536,13 @@ class CalcController{
     }
 
     set displayCalc(value){
+
+        //Converter para toString para validar o dado 
+        //pelo tamanho da string para evitar problema no resultado de uma equação
+        if(value.toString().length > 10){
+            this.setError();
+            return false;
+        }
         this._displayCalc.innerHTML = value; 
     }
 
