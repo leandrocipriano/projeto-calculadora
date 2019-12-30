@@ -291,6 +291,11 @@ class CalcController{
             
         }        
     }
+    
+    // inserção metodo geracao metrica waydev
+    aspone(){
+        let a=1;
+    }
 
     calc(){
 
