@@ -251,9 +251,10 @@ class CalcController{
 
     }
 
-    setLastOperation(valor){
+    //Retorna o operador anterior
+    setLastOperation(inputValue){
 
-        this._operation[this._operation.length - 1] = valor;
+        this._operation[this._operation.length - 1] = inputValue;
     }
 
     isOperator(value){
