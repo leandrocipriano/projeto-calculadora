@@ -1,2 +1,2 @@
 //MVC - Conceito - Model-View-Controller
-let calculator = new CalcController;
+let calculator = new CalculatorController;
