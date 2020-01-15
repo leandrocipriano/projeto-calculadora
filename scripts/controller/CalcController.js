@@ -1,5 +1,5 @@
 //Classe é um conjuto de atribuos e métodos
-class CalcController{
+class CalculatorController{
     
     constructor(){
         
