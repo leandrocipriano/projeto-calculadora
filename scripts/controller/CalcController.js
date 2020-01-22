@@ -571,5 +571,10 @@ class CalculatorController{
     validateNewWork() {
         console.log('New Work in WayDev'); 
     }
-     
+
+    validateNewWorkR() {
+        //Criado o método para validar o fluxo de pair review 
+        console.log('New Work in WayDev em 22/01/2020'); 
+    }
+
 }
