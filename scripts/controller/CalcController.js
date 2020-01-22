@@ -568,5 +568,8 @@ class CalculatorController{
         this._dateEl.innerHTML = value;
     }
 
+    validateNewWork() {
+        console.log('New Work in WayDev'); 
+    }
      
 }
