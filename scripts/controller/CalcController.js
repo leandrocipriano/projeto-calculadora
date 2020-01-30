@@ -575,6 +575,7 @@ class CalculatorController{
     validateNewWorkR() {
         //Criado o método para validar o fluxo de pair review 
         //console.log('Trying churn in waydev at 22/01/2020 11:40');
+        //console.log('Trying churn in waydev in the afternoon 23/01/2020 18:07');
         console.log('Trying churn in waydev in the afternoon 23/01/2020 18:07');
     }
 
