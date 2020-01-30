@@ -135,6 +135,14 @@ class CalculatorController{
             this._audio.play();
         }
     }
+    
+    stopAudio(){
+
+       if(!this._audioOnOff){
+           this._audio.currentTime = 0;
+           this._audio.stop();
+       }
+    }
 
     iniKeyboard(){
 
