@@ -135,6 +135,14 @@ class CalculatorController{
             this._audio.play();
         }
     }
+    
+    stopAudio(){
+
+       if(!this._audioOnOff){
+           this._audio.currentTime = 0;
+           this._audio.stop();
+       }
+    }
 
     iniKeyboard(){
 
@@ -577,6 +585,7 @@ class CalculatorController{
         //console.log('Trying churn in waydev at 22/01/2020 11:40');
         //console.log('Trying churn in waydev in the afternoon 23/01/2020 18:07');
         console.log('Trying churn in waydev in the afternoon 23/01/2020 18:07');
+        console.log('Trying Trivial Comment at 23/01/2020');
     }
 
 }
