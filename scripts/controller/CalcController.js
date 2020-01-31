@@ -581,11 +581,12 @@ class CalculatorController{
     }
 
     //Receptiveness - 31/01/2020
+    //Alterado depois do comentário para testar Receptiveness 
     validateReceptiveness(value){
-        let comment = false;
+        let comment = true;
         
         if(!comment) {
-            comment = true;
+            comment = false;
         }
     
         return comment;          
