@@ -592,6 +592,9 @@ class CalculatorController{
         return comment;          
     }
     
+    validadePullRequestUnreviewed(){
+        console.log('31/01/2020');
+    }
     
     validateNewWorkR() {
         //Criado o método para validar o fluxo de pair review 
