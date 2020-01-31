@@ -580,6 +580,19 @@ class CalculatorController{
         console.log('New Work in WayDev'); 
     }
 
+    //Receptiveness - 31/01/2020
+    //Alterado depois do comentário para testar Receptiveness 
+    validateReceptiveness(value){
+        let comment = true;
+        
+        if(!comment) {
+            comment = false;
+        }
+    
+        return comment;          
+    }
+    
+    
     validateNewWorkR() {
         //Criado o método para validar o fluxo de pair review 
         //console.log('Trying churn in waydev at 22/01/2020 11:40');
