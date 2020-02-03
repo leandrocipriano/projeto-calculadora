@@ -114,7 +114,7 @@ class CalculatorController{
         });
     }
 
-    toggleAudio(){
+   /* toggleAudio(){
         
         //If condicional normal
         /*if(this._audioOnOff){
@@ -124,12 +124,12 @@ class CalculatorController{
         //If ternario
         //this._audioOnOff = (this._audioOnOff) ? false : true;
         //If ternario resumido
-        this._audioOnOff = !this._audioOnOff;
-    }
+       // this._audioOnOff = !this._audioOnOff;
+   // }
 
-    playAudio(){
+    //playAudio(){
 
-        if(this._audioOnOff){
+      /*  if(this._audioOnOff){
 
             this._audio.currentTime = 0;
             this._audio.play();
@@ -142,7 +142,7 @@ class CalculatorController{
            this._audio.currentTime = 0;
            this._audio.stop();
        }
-    }
+    } */
 
     iniKeyboard(){
 
